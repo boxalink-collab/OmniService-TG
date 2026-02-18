@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - OmniServiceTG</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+<body>
+  <h1>Tableau de bord Agence</h1>
+  <div id="liste-commandes"></div>
+
+  <script>
+    // Utilise la MEME configuration que l'app client
+    const firebaseConfig = { /* Tes clés Firebase */ };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // ÉCOUTER les commandes en temps réel
+    db.collection("commandes").orderBy("date", "desc")
+      .onSnapshot((querySnapshot) => {
+        const container = document.getElementById("liste-commandes");
+        container.innerHTML = ""; // On vide pour mettre à jour
+        
+        querySnapshot.forEach((doc) => {
+          const com = doc.data();
+          container.innerHTML += `
+            <div style="border:1px solid #ccc; margin:10px; padding:10px;">
+              <p><strong>Service :</strong> ${com.service}</p>
+              <p><strong>Statut :</strong> ${com.statut}</p>
+              <button onclick="valider('${doc.id}')">Marquer comme Terminé</button>
+            </div>
+          `;
+        });
+      });
+
+    function valider(id) {
+      db.collection("commandes").doc(id).update({ statut: "Terminé" });
+    }
+  </script>
+</body>
+</html>
