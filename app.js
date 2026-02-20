@@ -2,8 +2,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDtDK7-iDRy1E-kjZubjyjkPW7Th33BMyU",
-  authDomain: "omniservicetg-59df3.firebaseapp.com",
+  apiKey: 
+  authDomain: 
   projectId: "omniservicetg-59df3",
   storageBucket: "omniservicetg-59df3.firebasestorage.app",
   messagingSenderId: "196278567761",
