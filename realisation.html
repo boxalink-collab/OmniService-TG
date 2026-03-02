@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réalisations — AMEXPERTS & PARTNERS</title>
+  <meta name="description" content="Découvrez les réalisations et références d'AMEXPERTS & PARTNERS : projets structurés, études de cas et témoignages clients.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <style>
+    .filter-bar { display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+    .filter-btn { padding:0.5rem 1.25rem; background:transparent; border:1px solid #d0c8d8; color:var(--gray-dark); font-family:var(--font-sans); font-size:0.82rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; cursor:pointer; border-radius:2px; transition:all 0.3s; }
+    .filter-btn.active, .filter-btn:hover { background:var(--purple); border-color:var(--purple); color:#fff; }
+    .realisation-card .meta { display:flex; gap:1rem; font-size:0.78rem; color:var(--gray); margin-top:1rem; }
+    .realisation-card .meta i { color:var(--purple); }
+    .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
+    .testimonial-card { background:var(--bg-light); border-radius:4px; padding:2rem; border-left:4px solid var(--purple); }
+    .testimonial-card .quote { font-size:1rem; line-height:1.8; font-style:italic; color:var(--gray-dark); margin-bottom:1.25rem; }
+    .testimonial-card .author { font-weight:700; font-size:0.9rem; }
+    .testimonial-card .role { font-size:0.82rem; color:var(--gray); }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-text">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li>
+        <li class="dropdown"><a href="service.html">Nos Services <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a><ul class="dropdown-menu"><li><a href="service.html#redaction">Rédaction de projets</a></li><li><a href="service.html#mobilisation">Mobilisation de ressources</a></li><li><a href="service.html#structuration">Structuration financière</a></li><li><a href="service.html#immobilier">Expertise immobilière</a></li><li><a href="service.html#juridique">Ingénierie juridique</a></li></ul></li>
+        <li><a href="realisation.html" class="active">Réalisations</a></li><li><a href="blog.html">Actualités</a></li>
+        <li class="dropdown"><a href="#">Options <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a><ul class="dropdown-menu"><li><a href="projet_finance.html">Projets en financement</a></li><li><a href="partenaires.html">Partenariats stratégiques</a></li><li><a href="brochure.html">Brochure Corporate</a></li></ul></li>
+        <li><a href="index.html#contact" class="nav-cta">Consultation</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <i class="fas fa-angle-right"></i> <span>Réalisations</span></div>
+    <h1>Nos Réalisations</h1>
+    <p>Un portefeuille de projets concrets illustrant notre expertise et notre engagement pour le développement de l'Afrique.</p>
+  </div>
+
+  <!-- STATS -->
+  <div style="background:var(--black);padding:50px 2rem">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem">
+      <div style="text-align:center"><div style="font-family:var(--font-serif);font-size:3rem;font-weight:700;color:var(--purple-light)" class="counter" data-target="200" data-suffix="+">0+</div><div style="font-size:0.78rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.4rem">Projets réalisés</div></div>
+      <div style="text-align:center"><div style="font-family:var(--font-serif);font-size:3rem;font-weight:700;color:var(--purple-light)" class="counter" data-target="15" data-suffix="+">0+</div><div style="font-size:0.78rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.4rem">Pays couverts</div></div>
+      <div style="text-align:center"><div style="font-family:var(--font-serif);font-size:3rem;font-weight:700;color:var(--purple-light)" class="counter" data-target="50" data-suffix="M€+">0M€+</div><div style="font-size:0.78rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.4rem">Financements mobilisés</div></div>
+      <div style="text-align:center"><div style="font-family:var(--font-serif);font-size:3rem;font-weight:700;color:var(--purple-light)" class="counter" data-target="8" data-suffix="+">0+</div><div style="font-size:0.78rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.4rem">Secteurs couverts</div></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <span class="section-label">Portfolio de projets</span>
+          <h2>Études de cas</h2>
+        </div>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-btn active">Tous</button>
+        <button class="filter-btn">Énergie</button>
+        <button class="filter-btn">Immobilier</button>
+        <button class="filter-btn">Agro-industrie</button>
+        <button class="filter-btn">Finance</button>
+        <button class="filter-btn">Infrastructure</button>
+      </div>
+      <div class="realisations-grid">
+        <div class="realisation-card fade-up">
+          <div class="card-img" style="background:linear-gradient(135deg,#1a3a2e,#2e7d32)"><i class="fas fa-solar-panel"></i></div>
+          <div class="card-body">
+            <div class="tag">Énergie Renouvelable</div>
+            <h3>Parc solaire photovoltaïque — 10 MW</h3>
+            <p>Structuration financière complète, création du SPV, montage bancaire et mobilisation de co-investisseurs pour un parc solaire destiné à l'alimentation de zones rurales.</p>
+            <div class="meta"><span><i class="fas fa-map-marker-alt"></i> Sénégal</span><span><i class="fas fa-euro-sign"></i> 12 M€</span><span><i class="fas fa-calendar"></i> 2024</span></div>
+          </div>
+        </div>
+        <div class="realisation-card fade-up">
+          <div class="card-img" style="background:linear-gradient(135deg,#1a2a3e,#1565c0)"><i class="fas fa-city"></i></div>
+          <div class="card-body">
+            <div class="tag">Immobilier Résidentiel</div>
+            <h3>Résidence Premium — 120 logements</h3>
+            <p>Évaluation complète des actifs, audit immobilier, due diligence technique et structuration du financement bancaire pour un promoteur immobilier privé.</p>
+            <div class="meta"><span><i class="fas fa-map-marker-alt"></i> Togo</span><span><i class="fas fa-euro-sign"></i> 5 M€</span><span><i class="fas fa-calendar"></i> 2025</span></div>
+          </div>
+        </div>
+        <div class="realisation-card fade-up">
+          <div class="card-img" style="background:linear-gradient(135deg,#2e1a0a,#8d5524)"><i class="fas fa-tractor"></i></div>
+          <div class="card-body">
+            <div class="tag">Agro-industrie</div>
+            <h3>Complexe agro-industriel intégré</h3>
+            <p>Rédaction du business plan, étude de faisabilité, recherche de co-investisseurs et structuration juridique (JV) pour un complexe de transformation agricole.</p>
+            <div class="meta"><span><i class="fas fa-map-marker-alt"></i> Côte d'Ivoire</span><span><i class="fas fa-euro-sign"></i> 2,5 M€</span><span><i class="fas fa-calendar"></i> 2025</span></div>
+          </div>
+        </div>
+        <div class="realisation-card fade-up">
+          <div class="card-img" style="background:linear-gradient(135deg,#1a1a3e,var(--purple-dark))"><i class="fas fa-water"></i></div>
+          <div class="card-body">
+            <div class="tag">Infrastructure</div>
+            <h3>Réseau d'adduction d'eau potable</h3>
+            <p>Montage d'un PPP pour la construction et l'exploitation d'un réseau d'adduction d'eau potable en zone semi-urbaine. Financement mixte public-privé.</p>
+            <div class="meta"><span><i class="fas fa-map-marker-alt"></i> Bénin</span><span><i class="fas fa-euro-sign"></i> 7 M€</span><span><i class="fas fa-calendar"></i> 2023</span></div>
+          </div>
+        </div>
+        <div class="realisation-card fade-up">
+          <div class="card-img" style="background:linear-gradient(135deg,#1a1a1a,#333)"><i class="fas fa-warehouse"></i></div>
+          <div class="card-body">
+            <div class="tag">Logistique</div>
+            <h3>Plateforme logistique multimodale</h3>
+            <p>Structuration financière et juridique complète d'une plateforme logistique. Levée de fonds auprès de fonds africains d'infrastructure.</p>
+            <div class="meta"><span><i class="fas fa-map-marker-alt"></i> Bénin</span><span><i class="fas fa-euro-sign"></i> 8 M€</span><span><i class="fas fa-calendar"></i> 2025</span></div>
+          </div>
+        </div>
+        <div class="realisation-card fade-up">
+          <div class="card-img" style="background:linear-gradient(135deg,#1a2e2a,#00695c)"><i class="fas fa-hotel"></i></div>
+          <div class="card-body">
+            <div class="tag">Tourisme & Hôtellerie</div>
+            <h3>Hôtel 4 étoiles — Centre ville</h3>
+            <p>Structuration financière, négociation bancaire et accompagnement à la mobilisation d'un financement pour un projet hôtelier de standing.</p>
+            <div class="meta"><span><i class="fas fa-map-marker-alt"></i> Togo</span><span><i class="fas fa-euro-sign"></i> 4 M€</span><span><i class="fas fa-calendar"></i> 2024</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMOIGNAGES -->
+  <section style="background:var(--bg-light)">
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <span class="section-label">Ce que disent nos clients</span>
+        <h2>Témoignages</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-up">
+          <p class="quote">« AMEXPERTS & PARTNERS a structuré notre dossier de financement avec une rigueur et une professionnalisme remarquables. Grâce à leur expertise, nous avons obtenu le financement en moins de 4 mois. »</p>
+          <div class="author">Directeur Général</div>
+          <div class="role">Promoteur immobilier — Togo</div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <p class="quote">« Une équipe d'experts qui maîtrise parfaitement les réalités du marché africain. Leur accompagnement juridique et financier a été décisif dans la réussite de notre projet agro-industriel. »</p>
+          <div class="author">Président du Conseil d'Administration</div>
+          <div class="role">Groupe agro-industriel — Côte d'Ivoire</div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <p class="quote">« L'ingénierie financière d'AMEXPERTS & PARTNERS nous a permis d'optimiser notre structure de financement et de réduire significativement notre coût du capital. Un partenaire de confiance. »</p>
+          <div class="author">Directeur Financier</div>
+          <div class="role">Fonds d'investissement — Sénégal</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div style="max-width:700px;margin:0 auto">
+      <h2>Votre projet sera notre prochaine réussite</h2>
+      <p>Contactez-nous pour discuter de votre projet et obtenir une analyse préliminaire gratuite.</p>
+      <a href="index.html#contact" class="btn-white"><i class="fas fa-calendar-alt"></i> Prendre rendez-vous</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="logo-area"><span class="brand-name">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></div><p>Cabinet de conseil et d'ingénierie de projets. Lomé, Togo.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="service.html#redaction">Rédaction de projets</a></li><li><a href="service.html#mobilisation">Mobilisation de ressources</a></li><li><a href="service.html#structuration">Structuration financière</a></li><li><a href="service.html#immobilier">Expertise immobilière</a></li></ul></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li><li><a href="blog.html">Actualités</a></li><li><a href="partenaires.html">Partenariats</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+22899468126">+228 99 46 81 26</a></li><li><a href="mailto:amexpertspartners20@gmail.com">amexpertspartners20@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 AMEXPERTS AND PARTNERS — Tous droits réservés</p><div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="https://wa.me/22899468126"><i class="fab fa-whatsapp"></i></a><a href="mailto:amexpertspartners20@gmail.com"><i class="fas fa-envelope"></i></a></div></div>
+  </footer>
+  <a href="https://wa.me/22899468126" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="app.js"></script>
+  <script>
+    // Filter buttons (client-side)
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

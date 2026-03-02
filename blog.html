@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualités & Blog — AMEXPERTS & PARTNERS</title>
+  <meta name="description" content="Actualités, analyses financières, opportunités d'investissement et notes économiques d'AMEXPERTS & PARTNERS.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <style>
+    .blog-layout { display:grid; grid-template-columns:1fr 320px; gap:4rem; align-items:start; }
+    .sidebar-widget { background:var(--bg-light); border-radius:4px; padding:1.75rem; margin-bottom:2rem; }
+    .sidebar-widget h4 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1.25rem; color:var(--black); border-bottom:2px solid var(--purple); padding-bottom:0.75rem; }
+    .category-list { list-style:none; }
+    .category-list li { display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0; border-bottom:1px solid #e8e4ec; font-size:0.88rem; }
+    .category-list li:last-child { border-bottom:none; }
+    .category-list a { color:var(--gray-dark); transition:color 0.3s; }
+    .category-list a:hover { color:var(--purple); }
+    .category-count { background:rgba(123,45,139,0.1); color:var(--purple); padding:0.15rem 0.6rem; border-radius:20px; font-size:0.75rem; font-weight:600; }
+    .featured-post { background:linear-gradient(135deg,#1a1a2e,var(--purple-dark)); border-radius:4px; padding:2rem; color:#fff; margin-bottom:2rem; }
+    .featured-post .ftag { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--purple-light); margin-bottom:0.75rem; }
+    .featured-post h3 { font-size:1.3rem; margin-bottom:0.75rem; line-height:1.4; }
+    .featured-post p { color:rgba(255,255,255,0.7); font-size:0.88rem; line-height:1.7; }
+    @media (max-width: 900px) { .blog-layout { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-text">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li>
+        <li class="dropdown"><a href="service.html">Nos Services <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a><ul class="dropdown-menu"><li><a href="service.html#redaction">Rédaction de projets</a></li><li><a href="service.html#mobilisation">Mobilisation de ressources</a></li><li><a href="service.html#structuration">Structuration financière</a></li><li><a href="service.html#immobilier">Expertise immobilière</a></li></ul></li>
+        <li><a href="realisation.html">Réalisations</a></li><li><a href="blog.html" class="active">Actualités</a></li>
+        <li class="dropdown"><a href="#">Options <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a><ul class="dropdown-menu"><li><a href="projet_finance.html">Projets en financement</a></li><li><a href="partenaires.html">Partenariats stratégiques</a></li><li><a href="brochure.html">Brochure Corporate</a></li></ul></li>
+        <li><a href="index.html#contact" class="nav-cta">Consultation</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <i class="fas fa-angle-right"></i> <span>Actualités & Blog</span></div>
+    <h1>Actualités & Blog</h1>
+    <p>Analyses financières, opportunités d'investissement, notes économiques et actualités du cabinet.</p>
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <div class="blog-layout">
+        <!-- MAIN CONTENT -->
+        <div>
+          <div id="blogContainer" class="blog-grid" style="grid-template-columns:1fr">
+            <!-- Articles chargés dynamiquement par app.js -->
+            <article class="blog-card fade-up" style="display:grid;grid-template-columns:200px 1fr">
+              <div class="card-img" style="height:100%">📊</div>
+              <div class="card-body">
+                <div class="meta"><span>Finance</span> — 15 février 2026</div>
+                <h3>Structuration financière des PME en Afrique de l'Ouest</h3>
+                <p>Analyse des mécanismes de financement adaptés aux PME africaines dans un contexte de rareté de capital et de montée des fintechs. Les instruments alternatifs comme le financement participatif et les obligations vertes émergent comme des solutions prometteuses.</p>
+                <a href="#" class="read-more">Lire la suite →</a>
+              </div>
+            </article>
+            <article class="blog-card fade-up" style="display:grid;grid-template-columns:200px 1fr">
+              <div class="card-img" style="height:100%">🏗️</div>
+              <div class="card-body">
+                <div class="meta"><span>Investissement</span> — 28 janvier 2026</div>
+                <h3>Opportunités immobilières au Togo en 2026</h3>
+                <p>Tour d'horizon des secteurs porteurs et des zones à fort potentiel de valorisation dans l'immobilier togolais. La demande en logements intermédiaires reste fortement sous-servie dans les grandes agglomérations.</p>
+                <a href="#" class="read-more">Lire la suite →</a>
+              </div>
+            </article>
+            <article class="blog-card fade-up" style="display:grid;grid-template-columns:200px 1fr">
+              <div class="card-img" style="height:100%">🤝</div>
+              <div class="card-body">
+                <div class="meta"><span>PPP</span> — 10 janvier 2026</div>
+                <h3>PPP : levier de développement pour les collectivités africaines</h3>
+                <p>Comment les partenariats public-privé peuvent accélérer la mise en place d'infrastructures structurantes en Afrique de l'Ouest. Les collectivités disposent d'atouts sous-exploités pour attirer les capitaux privés.</p>
+                <a href="#" class="read-more">Lire la suite →</a>
+              </div>
+            </article>
+            <article class="blog-card fade-up" style="display:grid;grid-template-columns:200px 1fr">
+              <div class="card-img" style="height:100%">⚡</div>
+              <div class="card-body">
+                <div class="meta"><span>Énergie</span> — 22 décembre 2025</div>
+                <h3>Transition énergétique en Afrique : enjeux et financements</h3>
+                <p>Les énergies renouvelables représentent un marché de plusieurs milliards d'euros en Afrique subsaharienne. Analyse des schémas de financement et des acteurs clés du secteur.</p>
+                <a href="#" class="read-more">Lire la suite →</a>
+              </div>
+            </article>
+            <article class="blog-card fade-up" style="display:grid;grid-template-columns:200px 1fr">
+              <div class="card-img" style="height:100%">📋</div>
+              <div class="card-body">
+                <div class="meta"><span>Réglementation</span> — 5 décembre 2025</div>
+                <h3>Droit OHADA : réformes récentes et impact sur l'investissement</h3>
+                <p>Les récentes évolutions du droit OHADA renforcent la sécurité juridique des investissements en Afrique francophone. Quelles implications pour les entreprises étrangères qui souhaitent s'implanter ?</p>
+                <a href="#" class="read-more">Lire la suite →</a>
+              </div>
+            </article>
+            <article class="blog-card fade-up" style="display:grid;grid-template-columns:200px 1fr">
+              <div class="card-img" style="height:100%">🌍</div>
+              <div class="card-body">
+                <div class="meta"><span>Macroéconomie</span> — 18 novembre 2025</div>
+                <h3>Perspectives économiques UEMOA 2026 : opportunités et risques</h3>
+                <p>Analyse des perspectives de croissance dans l'espace UEMOA pour 2026. Quels secteurs porteurs malgré les tensions géopolitiques régionales et la pression inflationniste ?</p>
+                <a href="#" class="read-more">Lire la suite →</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- PAGINATION -->
+          <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:3rem">
+            <button style="width:40px;height:40px;background:var(--purple);color:#fff;border:none;cursor:pointer;border-radius:3px;font-family:var(--font-sans)">1</button>
+            <button style="width:40px;height:40px;background:transparent;color:var(--black);border:1px solid #d0c8d8;cursor:pointer;border-radius:3px;font-family:var(--font-sans)">2</button>
+            <button style="width:40px;height:40px;background:transparent;color:var(--black);border:1px solid #d0c8d8;cursor:pointer;border-radius:3px;font-family:var(--font-sans)">3</button>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside>
+          <div class="featured-post">
+            <div class="ftag">À la une</div>
+            <h3>Guide 2026 : Financer son projet en Afrique de l'Ouest</h3>
+            <p>Notre guide complet des instruments de financement disponibles pour les entreprises et promoteurs en Afrique de l'Ouest.</p>
+            <a href="#" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:1.25rem;font-size:0.82rem;font-weight:600;color:var(--purple-light);text-transform:uppercase;letter-spacing:0.08em">Lire le guide →</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Catégories</h4>
+            <ul class="category-list">
+              <li><a href="#">Finance & Structuration</a><span class="category-count">8</span></li>
+              <li><a href="#">Immobilier</a><span class="category-count">5</span></li>
+              <li><a href="#">Investissement</a><span class="category-count">6</span></li>
+              <li><a href="#">PPP & Infrastructure</a><span class="category-count">4</span></li>
+              <li><a href="#">Énergie</a><span class="category-count">3</span></li>
+              <li><a href="#">Réglementation</a><span class="category-count">4</span></li>
+              <li><a href="#">Macroéconomie</a><span class="category-count">7</span></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Newsletter</h4>
+            <p style="font-size:0.85rem;margin-bottom:1rem;color:var(--gray)">Recevez nos analyses et opportunités d'investissement directement dans votre boîte mail.</p>
+            <form id="newsletterForm" style="display:flex;flex-direction:column;gap:0.75rem">
+              <input type="email" placeholder="Votre adresse email" style="padding:0.7rem 1rem;border:1px solid #d0c8d8;border-radius:3px;font-family:var(--font-sans);font-size:0.88rem;outline:none">
+              <button type="submit" class="btn-primary" style="justify-content:center">S'inscrire</button>
+            </form>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Nous suivre</h4>
+            <div style="display:flex;gap:0.75rem">
+              <a href="#" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.6rem;background:var(--purple);color:#fff;border-radius:3px;font-size:0.82rem;font-weight:600"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+              <a href="https://wa.me/22899468126" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.6rem;background:#25D366;color:#fff;border-radius:3px;font-size:0.82rem;font-weight:600"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="sidebar-widget" style="background:linear-gradient(135deg,var(--purple-dark),var(--purple));color:#fff">
+            <h4 style="color:#fff;border-color:rgba(255,255,255,0.2)">Besoin d'expertise ?</h4>
+            <p style="color:rgba(255,255,255,0.8);font-size:0.88rem;margin-bottom:1.25rem">Discutez de votre projet avec l'un de nos experts. Premier entretien gratuit et confidentiel.</p>
+            <a href="index.html#contact" class="btn-white" style="width:100%;justify-content:center">Prendre RDV</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="logo-area"><span class="brand-name">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></div><p>Cabinet de conseil et d'ingénierie de projets. Lomé, Togo.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="service.html#redaction">Rédaction de projets</a></li><li><a href="service.html#mobilisation">Mobilisation de ressources</a></li><li><a href="service.html#structuration">Structuration financière</a></li><li><a href="service.html#immobilier">Expertise immobilière</a></li></ul></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li><li><a href="realisation.html">Réalisations</a></li><li><a href="partenaires.html">Partenariats</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+22899468126">+228 99 46 81 26</a></li><li><a href="mailto:amexpertspartners20@gmail.com">amexpertspartners20@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 AMEXPERTS AND PARTNERS — Tous droits réservés</p><div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="https://wa.me/22899468126"><i class="fab fa-whatsapp"></i></a><a href="mailto:amexpertspartners20@gmail.com"><i class="fas fa-envelope"></i></a></div></div>
+  </footer>
+  <a href="https://wa.me/22899468126" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <script src="app.js"></script>
+</body>
+</html>

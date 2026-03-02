@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partenariats Stratégiques — AMEXPERTS & PARTNERS</title>
+  <meta name="description" content="AMEXPERTS & PARTNERS recherche et développe des partenariats stratégiques avec des institutions financières, investisseurs, cabinets techniques et ONG.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-text">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li>
+        <li class="dropdown"><a href="service.html">Nos Services <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a><ul class="dropdown-menu"><li><a href="service.html#redaction">Rédaction de projets</a></li><li><a href="service.html#mobilisation">Mobilisation de ressources</a></li><li><a href="service.html#structuration">Structuration financière</a></li><li><a href="service.html#immobilier">Expertise immobilière</a></li></ul></li>
+        <li><a href="realisation.html">Réalisations</a></li><li><a href="blog.html">Actualités</a></li>
+        <li class="dropdown"><a href="#" class="active">Options <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a><ul class="dropdown-menu"><li><a href="projet_finance.html">Projets en financement</a></li><li><a href="partenaires.html" class="active">Partenariats stratégiques</a></li><li><a href="brochure.html">Brochure Corporate</a></li></ul></li>
+        <li><a href="index.html#contact" class="nav-cta">Consultation</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <i class="fas fa-angle-right"></i> <span>Partenariats stratégiques</span></div>
+    <h1>Partenariats Stratégiques</h1>
+    <p>Construisons ensemble des alliances durables pour démultiplier l'impact de vos projets en Afrique et à l'international.</p>
+  </div>
+
+  <!-- INTRO -->
+  <section>
+    <div class="section-inner">
+      <div class="why-grid">
+        <div class="fade-up">
+          <span class="section-label">Notre approche partenariale</span>
+          <h2>Des alliances stratégiques au service du développement</h2>
+          <p style="margin:1.25rem 0;line-height:1.9">AMEXPERTS & PARTNERS croit profondément que la coopération stratégique est le levier le plus puissant pour accélérer le développement économique de l'Afrique. Nous cultivons des partenariats solides et durables avec des acteurs complémentaires pour offrir à nos clients des solutions intégrées de haute valeur ajoutée.</p>
+          <p style="line-height:1.9">Que vous soyez une institution financière, un cabinet d'experts, un fonds d'investissement ou une ONG, nous sommes ouverts à explorer des formes de collaboration adaptées à vos objectifs.</p>
+          <a href="index.html#contact" class="btn-primary" style="margin-top:2.5rem"><i class="fas fa-handshake"></i> Proposer un partenariat</a>
+        </div>
+        <div class="fade-up">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem">
+            <div style="background:var(--bg-light);padding:1.5rem;border-radius:4px;border-top:3px solid var(--purple)"><i class="fas fa-university" style="font-size:1.8rem;color:var(--purple);margin-bottom:0.75rem;display:block"></i><h4 style="font-size:0.95rem;margin-bottom:0.5rem">Institutions financières</h4><p style="font-size:0.85rem">Banques, fonds, assureurs, microfinance</p></div>
+            <div style="background:var(--bg-light);padding:1.5rem;border-radius:4px;border-top:3px solid var(--purple)"><i class="fas fa-chart-bar" style="font-size:1.8rem;color:var(--purple);margin-bottom:0.75rem;display:block"></i><h4 style="font-size:0.95rem;margin-bottom:0.5rem">Investisseurs</h4><p style="font-size:0.85rem">PE, VC, family offices, business angels</p></div>
+            <div style="background:var(--bg-light);padding:1.5rem;border-radius:4px;border-top:3px solid var(--purple)"><i class="fas fa-cogs" style="font-size:1.8rem;color:var(--purple);margin-bottom:0.75rem;display:block"></i><h4 style="font-size:0.95rem;margin-bottom:0.5rem">Cabinets techniques</h4><p style="font-size:0.85rem">Ingénierie, audit, juridique, conseil</p></div>
+            <div style="background:var(--bg-light);padding:1.5rem;border-radius:4px;border-top:3px solid var(--purple)"><i class="fas fa-globe" style="font-size:1.8rem;color:var(--purple);margin-bottom:0.75rem;display:block"></i><h4 style="font-size:0.95rem;margin-bottom:0.5rem">ONG & Bailleurs</h4><p style="font-size:0.85rem">Développement, coopération, aide technique</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES DE PARTENARIATS -->
+  <section style="background:var(--bg-light)">
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <span class="section-label">Formes de collaboration</span>
+        <h2>Types de partenariats proposés</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
+          <h3>Joint-Venture</h3>
+          <p>Création d'entités communes pour structurer et réaliser des projets d'envergure nécessitant des compétences pluridisciplinaires complémentaires.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fas fa-city"></i></div>
+          <h3>Partenariat Public-Privé (PPP)</h3>
+          <p>Montage et accompagnement de PPP pour le développement d'infrastructures, de services publics délégués et d'équipements collectifs.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fas fa-file-signature"></i></div>
+          <h3>Memorandum of Understanding</h3>
+          <p>Formalisation d'accords de coopération, d'échanges de compétences et de référencement mutuel avec des partenaires stratégiques.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fas fa-tools"></i></div>
+          <h3>Accords techniques</h3>
+          <p>Collaboration sur des expertises techniques complémentaires : ingénierie, audit, conseil juridique, expertise sectorielle.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fas fa-coins"></i></div>
+          <h3>Accords financiers</h3>
+          <p>Structuration de co-financement, partage de risques et mise en commun de capacités de mobilisation financière.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+          <h3>Réseaux d'experts</h3>
+          <p>Intégration dans notre réseau d'experts référencés pour intervenir en appui sur des missions ponctuelles ou récurrentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTENAIRES ACTUELS -->
+  <section>
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <span class="section-label">Notre écosystème</span>
+        <h2>Partenaires & Collaborateurs</h2>
+        <p style="max-width:600px;margin:1rem auto;color:var(--gray)">Nous collaborons avec un réseau sélectionné d'institutions et d'experts partageant nos valeurs d'excellence et d'intégrité.</p>
+      </div>
+      <div class="partenaires-grid">
+        <div class="partenaire-card fade-up">
+          <div class="logo-area"><i class="fas fa-university"></i></div>
+          <h3>Institutions Bancaires</h3>
+          <p>Partenariats avec des banques commerciales et de développement pour faciliter l'accès au financement de nos clients.</p>
+          <span class="type">Financement</span>
+        </div>
+        <div class="partenaire-card fade-up">
+          <div class="logo-area"><i class="fas fa-chart-line"></i></div>
+          <h3>Fonds d'Investissement</h3>
+          <p>Réseau de fonds africains et internationaux spécialisés dans les économies émergentes et les projets d'infrastructure.</p>
+          <span class="type">Capital</span>
+        </div>
+        <div class="partenaire-card fade-up">
+          <div class="logo-area"><i class="fas fa-gavel"></i></div>
+          <h3>Cabinets Juridiques</h3>
+          <p>Partenariats avec des cabinets d'avocats spécialisés en droit OHADA, droit des affaires et droit international.</p>
+          <span class="type">Expertise juridique</span>
+        </div>
+        <div class="partenaire-card fade-up">
+          <div class="logo-area"><i class="fas fa-hard-hat"></i></div>
+          <h3>Bureaux d'Ingénierie</h3>
+          <p>Collaboration avec des bureaux d'études techniques pour les expertises industrielles et les audits d'infrastructure.</p>
+          <span class="type">Technique</span>
+        </div>
+        <div class="partenaire-card fade-up">
+          <div class="logo-area"><i class="fas fa-globe-africa"></i></div>
+          <h3>ONG & Coopération</h3>
+          <p>Partenariats avec des organisations de développement pour accéder aux financements concessionnels et aux appuis techniques.</p>
+          <span class="type">Développement</span>
+        </div>
+        <div class="partenaire-card fade-up">
+          <div class="logo-area"><i class="fas fa-shield-alt"></i></div>
+          <h3>Compagnies d'Assurance</h3>
+          <p>Réseau d'assureurs partenaires pour la couverture des risques de projets et la mise en place de garanties bancaires.</p>
+          <span class="type">Assurance & Garanties</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULAIRE PARTENARIAT -->
+  <section style="background:var(--bg-light)">
+    <div class="section-inner" style="max-width:800px">
+      <div style="text-align:center;margin-bottom:3rem">
+        <span class="section-label">Nous rejoindre</span>
+        <h2>Proposer un partenariat</h2>
+        <p style="color:var(--gray)">Vous souhaitez collaborer avec AMEXPERTS & PARTNERS ? Décrivez votre organisation et votre proposition de valeur.</p>
+      </div>
+      <form id="consultationForm" class="contact-form">
+        <div class="form-row">
+          <div class="form-group"><label>Nom / Organisation *</label><input type="text" name="nom" placeholder="Nom de votre organisation" required></div>
+          <div class="form-group"><label>Email *</label><input type="email" name="email" placeholder="contact@organisation.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Téléphone</label><input type="tel" name="telephone" placeholder="+XXX XX XX XX XX"></div>
+          <div class="form-group">
+            <label>Type de partenariat</label>
+            <select name="service">
+              <option value="">— Sélectionner —</option>
+              <option>Joint-Venture</option>
+              <option>Partenariat Public-Privé</option>
+              <option>Mémorandum d'entente (MoU)</option>
+              <option>Accord technique</option>
+              <option>Accord financier</option>
+              <option>Réseau d'experts</option>
+              <option>Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group"><label>Décrivez votre proposition *</label><textarea name="message" placeholder="Présentez votre organisation, votre secteur d'activité et le type de collaboration envisagé..." required></textarea></div>
+        <button type="submit" class="btn-primary" style="align-self:flex-start"><i class="fas fa-paper-plane"></i> Envoyer la proposition</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="logo-area"><span class="brand-name">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></div><p>Cabinet de conseil et d'ingénierie de projets. Lomé, Togo.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="service.html#redaction">Rédaction de projets</a></li><li><a href="service.html#mobilisation">Mobilisation de ressources</a></li><li><a href="service.html#structuration">Structuration financière</a></li><li><a href="service.html#immobilier">Expertise immobilière</a></li></ul></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li><li><a href="realisation.html">Réalisations</a></li><li><a href="blog.html">Actualités</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+22899468126">+228 99 46 81 26</a></li><li><a href="mailto:amexpertspartners20@gmail.com">amexpertspartners20@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 AMEXPERTS AND PARTNERS — Tous droits réservés</p><div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="https://wa.me/22899468126"><i class="fab fa-whatsapp"></i></a><a href="mailto:amexpertspartners20@gmail.com"><i class="fas fa-envelope"></i></a></div></div>
+  </footer>
+  <a href="https://wa.me/22899468126" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <script src="app.js"></script>
+</body>
+</html>

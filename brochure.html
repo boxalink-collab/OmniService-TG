@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brochure Corporate — AMEXPERTS & PARTNERS</title>
+  <meta name="description" content="Téléchargez la brochure corporate d'AMEXPERTS & PARTNERS. Présentation complète du cabinet, des services et des références.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <style>
+    .brochure-section { padding:80px 2rem; }
+    .brochure-mockup { position:relative; width:100%; max-width:460px; margin:0 auto; }
+    .mockup-page { background:linear-gradient(135deg,#1a1a2e,var(--purple-dark)); border-radius:6px; padding:2.5rem; color:#fff; min-height:580px; display:flex; flex-direction:column; position:relative; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.3); }
+    .mockup-page::before { content:''; position:absolute; inset:0; background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); }
+    .mockup-page > * { position:relative; }
+    .mockup-logo { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:700; margin-bottom:3rem; }
+    .mockup-title { font-size:2.2rem; font-family:'Cormorant Garamond',serif; font-weight:700; line-height:1.2; margin-bottom:1rem; }
+    .mockup-sub { color:rgba(255,255,255,0.6); font-size:0.85rem; margin-bottom:2rem; }
+    .mockup-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.5rem; }
+    .mockup-tag { padding:0.25rem 0.75rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:20px; font-size:0.75rem; color:rgba(255,255,255,0.7); }
+    .mockup-footer { border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem; margin-top:auto; display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; color:rgba(255,255,255,0.4); }
+    .download-section { background:var(--bg-light); border-radius:8px; padding:2.5rem; }
+    .download-option { display:flex; align-items:center; gap:1.25rem; padding:1.25rem; background:var(--white); border:1px solid #e8e4ec; border-radius:4px; margin-bottom:1rem; transition:all 0.3s; cursor:pointer; }
+    .download-option:hover { border-color:var(--purple); box-shadow:0 4px 16px rgba(123,45,139,0.1); }
+    .download-option .icon { width:48px; height:48px; background:rgba(123,45,139,0.08); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; color:var(--purple); flex-shrink:0; }
+    .download-option .info h4 { font-size:0.95rem; margin-bottom:0.25rem; }
+    .download-option .info p { font-size:0.82rem; color:var(--gray); }
+    .download-option .action { margin-left:auto; }
+    .preview-pages { display:grid; grid-template-columns:repeat(4,1fr); gap:0.75rem; margin-top:2rem; }
+    .preview-page { background:linear-gradient(135deg,#f0ecf5,#e8e0f0); border-radius:3px; height:80px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:var(--purple); opacity:0.7; transition:opacity 0.3s; cursor:pointer; border:2px solid transparent; }
+    .preview-page:hover, .preview-page.active { opacity:1; border-color:var(--purple); }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-text">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li>
+        <li class="dropdown"><a href="service.html">Nos Services <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a><ul class="dropdown-menu"><li><a href="service.html#redaction">Rédaction de projets</a></li><li><a href="service.html#mobilisation">Mobilisation de ressources</a></li><li><a href="service.html#structuration">Structuration financière</a></li></ul></li>
+        <li><a href="realisation.html">Réalisations</a></li><li><a href="blog.html">Actualités</a></li>
+        <li class="dropdown"><a href="#" class="active">Options <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a><ul class="dropdown-menu"><li><a href="projet_finance.html">Projets en financement</a></li><li><a href="partenaires.html">Partenariats stratégiques</a></li><li><a href="brochure.html" class="active">Brochure Corporate</a></li></ul></li>
+        <li><a href="index.html#contact" class="nav-cta">Consultation</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <i class="fas fa-angle-right"></i> <span>Brochure Corporate</span></div>
+    <h1>Brochure Corporate</h1>
+    <p>Téléchargez notre documentation officielle pour en savoir plus sur notre cabinet et nos services.</p>
+  </div>
+
+  <section class="brochure-section">
+    <div class="section-inner">
+      <div class="brochure-content">
+        <!-- MOCKUP -->
+        <div class="fade-up">
+          <div class="brochure-mockup">
+            <div class="mockup-page">
+              <div class="mockup-logo">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</div>
+              <div class="mockup-title">Cabinet de Conseil & Ingénierie de Projets</div>
+              <div class="mockup-sub">Lomé, Togo · Afrique de l'Ouest & International</div>
+              <div class="mockup-tags">
+                <span class="mockup-tag">Structuration Financière</span>
+                <span class="mockup-tag">Mobilisation de Ressources</span>
+                <span class="mockup-tag">Expertise Immobilière</span>
+                <span class="mockup-tag">Ingénierie Juridique</span>
+                <span class="mockup-tag">Formations</span>
+              </div>
+              <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem">
+                <div style="display:flex;gap:2rem">
+                  <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--purple-light)">200+</div><div style="font-size:0.7rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em">Projets</div></div>
+                  <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--purple-light)">15+</div><div style="font-size:0.7rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em">Pays</div></div>
+                  <div><div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--purple-light)">10+</div><div style="font-size:0.7rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em">Années</div></div>
+                </div>
+              </div>
+              <div class="mockup-footer">
+                <span>Ref. 71/62029/DG/AM&P · 2026</span>
+                <span>Confidentiel</span>
+              </div>
+            </div>
+
+            <!-- Page thumbs -->
+            <div class="preview-pages">
+              <div class="preview-page active"><i class="fas fa-home"></i></div>
+              <div class="preview-page"><i class="fas fa-briefcase"></i></div>
+              <div class="preview-page"><i class="fas fa-chart-line"></i></div>
+              <div class="preview-page"><i class="fas fa-handshake"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOWNLOAD OPTIONS -->
+        <div class="fade-up">
+          <span class="section-label">Téléchargements</span>
+          <h2 style="margin-bottom:1rem">Notre documentation officielle</h2>
+          <p style="color:var(--gray);margin-bottom:2.5rem;line-height:1.8">Retrouvez l'ensemble de notre documentation institutionnelle pour vous informer sur nos expertises, nos références et nos offres de service.</p>
+
+          <div class="download-section">
+            <div class="download-option" onclick="trackDownload('brochure_generale')">
+              <div class="icon"><i class="fas fa-file-pdf"></i></div>
+              <div class="info">
+                <h4>Brochure Générale</h4>
+                <p>Présentation complète du cabinet, services et références · PDF · 2,4 MB</p>
+              </div>
+              <div class="action">
+                <a href="mailto:amexpertspartners20@gmail.com?subject=Demande brochure générale AM%26P" class="btn-primary"><i class="fas fa-download"></i> Télécharger</a>
+              </div>
+            </div>
+            <div class="download-option" onclick="trackDownload('presentation_services')">
+              <div class="icon"><i class="fas fa-file-powerpoint"></i></div>
+              <div class="info">
+                <h4>Présentation Services</h4>
+                <p>Détail de notre offre de services et méthodologie · PDF · 1,8 MB</p>
+              </div>
+              <div class="action">
+                <a href="mailto:amexpertspartners20@gmail.com?subject=Demande présentation services AM%26P" class="btn-purple-outline"><i class="fas fa-download"></i> Télécharger</a>
+              </div>
+            </div>
+            <div class="download-option" onclick="trackDownload('references')">
+              <div class="icon"><i class="fas fa-folder-open"></i></div>
+              <div class="info">
+                <h4>Dossier de Références</h4>
+                <p>Études de cas et projets réalisés · PDF · 3,1 MB</p>
+              </div>
+              <div class="action">
+                <a href="mailto:amexpertspartners20@gmail.com?subject=Demande dossier références AM%26P" class="btn-purple-outline"><i class="fas fa-download"></i> Télécharger</a>
+              </div>
+            </div>
+            <div class="download-option" onclick="trackDownload('guide_financement')">
+              <div class="icon"><i class="fas fa-book-open"></i></div>
+              <div class="info">
+                <h4>Guide : Financer son projet en Afrique</h4>
+                <p>Notre guide pratique sur les instruments de financement · PDF · 1,2 MB</p>
+              </div>
+              <div class="action">
+                <a href="mailto:amexpertspartners20@gmail.com?subject=Demande guide financement AM%26P" class="btn-purple-outline"><i class="fas fa-download"></i> Télécharger</a>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:rgba(123,45,139,0.06);border-radius:4px;padding:1.25rem 1.5rem;margin-top:1.5rem;font-size:0.85rem;color:var(--gray-dark)">
+            <i class="fas fa-info-circle" style="color:var(--purple);margin-right:0.5rem"></i>
+            Les documents détaillés sont transmis par email sur demande. Cliquez sur "Télécharger" pour envoyer une demande à notre équipe.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMANDE DE CONTACT RAPIDE -->
+  <section style="background:var(--black)">
+    <div class="section-inner" style="max-width:700px;text-align:center">
+      <span class="section-label" style="color:var(--purple-light)">Contact direct</span>
+      <h2 style="color:#fff;margin-bottom:1rem">Besoin d'informations supplémentaires ?</h2>
+      <p style="color:rgba(255,255,255,0.7);margin-bottom:2.5rem">Notre équipe est disponible pour répondre à toutes vos questions et vous fournir les documents dont vous avez besoin.</p>
+      <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap">
+        <a href="mailto:amexpertspartners20@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i> Envoyer un email</a>
+        <a href="https://wa.me/22899468126" class="btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="index.html#contact" class="btn-outline"><i class="fas fa-calendar-check"></i> Prendre RDV</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="logo-area"><span class="brand-name">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></div><p>Cabinet de conseil et d'ingénierie de projets. Lomé, Togo.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="service.html#redaction">Rédaction de projets</a></li><li><a href="service.html#mobilisation">Mobilisation de ressources</a></li><li><a href="service.html#structuration">Structuration financière</a></li></ul></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li><li><a href="realisation.html">Réalisations</a></li><li><a href="partenaires.html">Partenariats</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+22899468126">+228 99 46 81 26</a></li><li><a href="mailto:amexpertspartners20@gmail.com">amexpertspartners20@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 AMEXPERTS AND PARTNERS — Tous droits réservés</p><div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="https://wa.me/22899468126"><i class="fab fa-whatsapp"></i></a></div></div>
+  </footer>
+  <a href="https://wa.me/22899468126" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="app.js"></script>
+  <script>
+    async function trackDownload(docType) {
+      if (typeof db !== 'undefined' && db) {
+        try {
+          await db.collection('brochure_downloads').add({ doc: docType, date: new Date().toISOString() });
+        } catch(e) {}
+      }
+    }
+
+    // Preview page switcher
+    document.querySelectorAll('.preview-page').forEach((el, i) => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('.preview-page').forEach(p => p.classList.remove('active'));
+        el.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

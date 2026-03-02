@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets en Recherche de Financement — AMEXPERTS & PARTNERS</title>
+  <meta name="description" content="Découvrez les projets en recherche de financement accompagnés par AMEXPERTS & PARTNERS. Opportunités d'investissement en Afrique de l'Ouest.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <style>
+    .disclaimer { background:rgba(123,45,139,0.06); border:1px solid rgba(123,45,139,0.2); border-left:4px solid var(--purple); border-radius:4px; padding:1.25rem 1.5rem; margin-bottom:2.5rem; font-size:0.88rem; color:var(--gray-dark); line-height:1.7; }
+    .disclaimer strong { color:var(--purple); }
+    .table-wrapper { overflow-x:auto; border-radius:4px; box-shadow:var(--shadow); }
+    .project-card { background:var(--white); border:1px solid #e8e4ec; border-radius:4px; padding:2rem; margin-bottom:1.5rem; transition:all 0.3s; }
+    .project-card:hover { box-shadow:var(--shadow-lg); border-color:rgba(123,45,139,0.2); }
+    .project-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:1rem; flex-wrap:wrap; }
+    .project-card-meta { display:flex; gap:1.5rem; flex-wrap:wrap; margin:1rem 0; font-size:0.85rem; color:var(--gray); }
+    .project-card-meta span { display:flex; align-items:center; gap:0.4rem; }
+    .project-card-meta i { color:var(--purple); }
+    .progress-bar-wrap { background:#e8e4ec; border-radius:20px; height:6px; margin:1rem 0; }
+    .progress-bar { background:var(--purple); border-radius:20px; height:6px; }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-text">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li>
+        <li class="dropdown"><a href="service.html">Nos Services <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a><ul class="dropdown-menu"><li><a href="service.html#redaction">Rédaction de projets</a></li><li><a href="service.html#mobilisation">Mobilisation de ressources</a></li><li><a href="service.html#structuration">Structuration financière</a></li></ul></li>
+        <li><a href="realisation.html">Réalisations</a></li><li><a href="blog.html">Actualités</a></li>
+        <li class="dropdown"><a href="#" class="active">Options <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a><ul class="dropdown-menu"><li><a href="projet_finance.html" class="active">Projets en financement</a></li><li><a href="partenaires.html">Partenariats stratégiques</a></li><li><a href="brochure.html">Brochure Corporate</a></li></ul></li>
+        <li><a href="index.html#contact" class="nav-cta">Consultation</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <i class="fas fa-angle-right"></i> <span>Projets en financement</span></div>
+    <h1>Projets en Recherche de Financement</h1>
+    <p>Un portefeuille de projets sélectionnés, structurés et accompagnés par notre cabinet, ouverts à l'investissement.</p>
+  </div>
+
+  <!-- INTRO -->
+  <section>
+    <div class="section-inner">
+      <div class="disclaimer">
+        <strong>Information importante :</strong> Les projets présentés sur cette page sont accompagnés par AMEXPERTS & PARTNERS dans leur processus de structuration et de recherche de financement. Toute expression d'intérêt sera traitée de manière confidentielle. Les informations détaillées sont transmises aux investisseurs qualifiés sur demande, sous accord de confidentialité.
+      </div>
+
+      <!-- PROJECT CARDS -->
+      <div>
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <div>
+              <div style="font-size:0.75rem;color:var(--purple);font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem">AM-2025-001 · Agro-industrie</div>
+              <h3>Complexe agro-industriel intégré — Transformation agricole</h3>
+            </div>
+            <span class="badge-status open">Ouvert</span>
+          </div>
+          <p style="color:var(--gray-dark);font-size:0.92rem;line-height:1.8">Projet de construction et d'exploitation d'un complexe agro-industriel de transformation de produits agricoles locaux. Intègre une unité de transformation, un entrepôt frigorifique et un centre de conditionnement aux normes d'exportation.</p>
+          <div class="project-card-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Togo</span>
+            <span><i class="fas fa-euro-sign"></i> 2,5 M€</span>
+            <span><i class="fas fa-chart-line"></i> TRI estimé : 18-22%</span>
+            <span><i class="fas fa-clock"></i> Durée : 5 ans</span>
+            <span><i class="fas fa-users"></i> Promoteurs identifiés</span>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--gray);margin-bottom:0.4rem"><span>Financement mobilisé</span><span>40%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar" style="width:40%"></div></div>
+          </div>
+          <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+            <a href="mailto:amexpertspartners20@gmail.com?subject=Intérêt projet AM-2025-001" class="btn-primary"><i class="fas fa-envelope"></i> Exprimer mon intérêt</a>
+            <a href="index.html#contact" class="btn-purple-outline"><i class="fas fa-phone"></i> Discuter avec un expert</a>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <div>
+              <div style="font-size:0.75rem;color:var(--purple);font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem">AM-2025-002 · Immobilier</div>
+              <h3>Résidence haut standing — 80 appartements</h3>
+            </div>
+            <span class="badge-status progress">En cours</span>
+          </div>
+          <p style="color:var(--gray-dark);font-size:0.92rem;line-height:1.8">Programme immobilier résidentiel haut de gamme dans un quartier prisé d'Abidjan. 80 appartements du T2 au T5, avec commerces en rez-de-chaussée. Permis de construire obtenu, terrain sécurisé.</p>
+          <div class="project-card-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Côte d'Ivoire</span>
+            <span><i class="fas fa-euro-sign"></i> 5 M€</span>
+            <span><i class="fas fa-chart-line"></i> TRI estimé : 24-28%</span>
+            <span><i class="fas fa-clock"></i> Durée : 3 ans</span>
+            <span><i class="fas fa-calendar-check"></i> Démarrage T3 2026</span>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--gray);margin-bottom:0.4rem"><span>Financement mobilisé</span><span>65%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar" style="width:65%"></div></div>
+          </div>
+          <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+            <a href="mailto:amexpertspartners20@gmail.com?subject=Intérêt projet AM-2025-002" class="btn-primary"><i class="fas fa-envelope"></i> Exprimer mon intérêt</a>
+            <a href="index.html#contact" class="btn-purple-outline"><i class="fas fa-phone"></i> Discuter avec un expert</a>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <div>
+              <div style="font-size:0.75rem;color:var(--purple);font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem">AM-2025-003 · Infrastructure</div>
+              <h3>Plateforme logistique multimodale</h3>
+            </div>
+            <span class="badge-status open">Ouvert</span>
+          </div>
+          <p style="color:var(--gray-dark);font-size:0.92rem;line-height:1.8">Construction d'une plateforme logistique de 15 000 m² à proximité du corridor Lomé-Ouagadougou. Entrepôts, bureaux, zone de transit, et services connexes. Conventions avec opérateurs de transport en cours de négociation.</p>
+          <div class="project-card-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Togo</span>
+            <span><i class="fas fa-euro-sign"></i> 8 M€</span>
+            <span><i class="fas fa-chart-line"></i> TRI estimé : 16-19%</span>
+            <span><i class="fas fa-clock"></i> Durée : 7 ans</span>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--gray);margin-bottom:0.4rem"><span>Financement mobilisé</span><span>20%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar" style="width:20%"></div></div>
+          </div>
+          <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+            <a href="mailto:amexpertspartners20@gmail.com?subject=Intérêt projet AM-2025-003" class="btn-primary"><i class="fas fa-envelope"></i> Exprimer mon intérêt</a>
+            <a href="index.html#contact" class="btn-purple-outline"><i class="fas fa-phone"></i> Discuter avec un expert</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLE RESUME -->
+      <div style="margin-top:4rem">
+        <h3 style="margin-bottom:1.5rem;font-size:1.3rem">Vue d'ensemble du portefeuille</h3>
+        <div class="table-wrapper">
+          <table class="financement-table">
+            <thead>
+              <tr><th>Réf.</th><th>Projet</th><th>Secteur</th><th>Montant</th><th>Pays</th><th>Statut</th><th>Action</th></tr>
+            </thead>
+            <tbody id="projetsTableBody">
+              <!-- Chargé dynamiquement par app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOUMETTRE UN PROJET -->
+  <section style="background:var(--bg-light)">
+    <div class="section-inner" style="max-width:800px">
+      <div style="text-align:center;margin-bottom:3rem">
+        <span class="section-label">Vous avez un projet ?</span>
+        <h2>Soumettre un projet à financer</h2>
+        <p style="color:var(--gray)">Vous êtes porteur d'un projet et recherchez un financement ? Soumettez-le à notre équipe pour une analyse préliminaire gratuite.</p>
+      </div>
+      <form class="contact-form" id="consultationForm">
+        <div class="form-row">
+          <div class="form-group"><label>Porteur du projet *</label><input type="text" name="nom" required placeholder="Nom / Société"></div>
+          <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="votre@email.com"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Secteur</label><select name="service"><option>Agro-industrie</option><option>Immobilier</option><option>Énergie</option><option>Infrastructure</option><option>Industrie</option><option>Services</option><option>Autre</option></select></div>
+          <div class="form-group"><label>Montant recherché</label><input type="text" name="organisation" placeholder="Ex: 2 M€"></div>
+        </div>
+        <div class="form-group"><label>Description du projet *</label><textarea name="message" required placeholder="Décrivez votre projet : secteur, localisation, stade de développement, besoins spécifiques..."></textarea></div>
+        <button type="submit" class="btn-primary" style="align-self:flex-start"><i class="fas fa-paper-plane"></i> Soumettre mon projet</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="logo-area"><span class="brand-name">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></div><p>Cabinet de conseil et d'ingénierie de projets. Lomé, Togo.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="service.html#redaction">Rédaction de projets</a></li><li><a href="service.html#mobilisation">Mobilisation de ressources</a></li><li><a href="service.html#structuration">Structuration financière</a></li></ul></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li><li><a href="realisation.html">Réalisations</a></li><li><a href="partenaires.html">Partenariats</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+22899468126">+228 99 46 81 26</a></li><li><a href="mailto:amexpertspartners20@gmail.com">amexpertspartners20@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 AMEXPERTS AND PARTNERS — Tous droits réservés</p><div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="https://wa.me/22899468126"><i class="fab fa-whatsapp"></i></a><a href="mailto:amexpertspartners20@gmail.com"><i class="fas fa-envelope"></i></a></div></div>
+  </footer>
+  <a href="https://wa.me/22899468126" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <script src="app.js"></script>
+</body>
+</html>

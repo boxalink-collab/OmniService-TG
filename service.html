@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Services — AMEXPERTS & PARTNERS</title>
+  <meta name="description" content="Découvrez l'ensemble des services d'AMEXPERTS & PARTNERS : structuration financière, mobilisation de ressources, expertise immobilière, ingénierie juridique et formations.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <style>
+    .service-detail { padding: 80px 0; border-bottom: 1px solid #e8e4ec; }
+    .service-detail:last-child { border-bottom: none; }
+    .service-detail-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+    .service-detail-grid.reverse { direction: rtl; }
+    .service-detail-grid.reverse > * { direction: ltr; }
+    .service-icon-lg { width: 72px; height: 72px; background: rgba(123,45,139,0.1); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--purple); margin-bottom: 1.5rem; }
+    .service-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.25rem; }
+    .service-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.92rem; color: var(--gray-dark); }
+    .service-list li i { color: var(--purple); font-size: 0.75rem; }
+    .service-visual { background: linear-gradient(135deg, #1a1a2e, var(--purple-dark)); border-radius: 8px; padding: 2.5rem; color: #fff; min-height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .service-visual i { font-size: 4rem; opacity: 0.7; margin-bottom: 1.5rem; }
+    .service-visual h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .service-visual p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+    @media (max-width: 768px) { .service-detail-grid { grid-template-columns: 1fr; } .service-detail-grid.reverse { direction: ltr; } }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-text">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li class="dropdown">
+          <a href="service.html" class="active">Nos Services <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#redaction">Rédaction de projets</a></li>
+            <li><a href="#mobilisation">Mobilisation de ressources</a></li>
+            <li><a href="#formations">Formations professionnelles</a></li>
+            <li><a href="#structuration">Structuration financière</a></li>
+            <li><a href="#immobilier">Expertise immobilière</a></li>
+            <li><a href="#industriel">Expertise industrielle</a></li>
+            <li><a href="#assurance">Expertise en assurance</a></li>
+            <li><a href="#juridique">Ingénierie juridique</a></li>
+          </ul>
+        </li>
+        <li><a href="realisation.html">Réalisations</a></li>
+        <li><a href="blog.html">Actualités</a></li>
+        <li class="dropdown">
+          <a href="#">Options <i class="fas fa-chevron-down" style="font-size:0.7em"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="projet_finance.html">Projets en financement</a></li>
+            <li><a href="partenaires.html">Partenariats stratégiques</a></li>
+            <li><a href="brochure.html">Brochure Corporate</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#contact" class="nav-cta">Consultation</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <i class="fas fa-angle-right"></i> <span>Nos Services</span></div>
+    <h1>Nos Services</h1>
+    <p>Une offre intégrée de conseil, d'ingénierie financière et d'expertise technique pour concrétiser vos ambitions.</p>
+  </div>
+
+  <section>
+    <div class="section-inner">
+
+      <!-- REDACTION -->
+      <div class="service-detail" id="redaction">
+        <div class="service-detail-grid">
+          <div class="fade-up">
+            <div class="service-icon-lg"><i class="fas fa-file-contract"></i></div>
+            <span class="section-label">Service 01</span>
+            <h2>Rédaction de projets</h2>
+            <p style="margin:1rem 0">Nous élaborons des documents stratégiques solides et convaincants pour maximiser vos chances d'obtenir un financement ou un partenariat.</p>
+            <ul class="service-list">
+              <li><i class="fas fa-check-circle"></i> Études de faisabilité techniques et financières</li>
+              <li><i class="fas fa-check-circle"></i> Business plans dynamiques et structurés</li>
+              <li><i class="fas fa-check-circle"></i> Dossiers bancaires et de crédit</li>
+              <li><i class="fas fa-check-circle"></i> Dossiers bailleurs de fonds (ONG, Banques de développement)</li>
+              <li><i class="fas fa-check-circle"></i> Mémorandums d'information (IM)</li>
+              <li><i class="fas fa-check-circle"></i> Notes de synthèse sectorielles</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" style="margin-top:2rem"><i class="fas fa-calendar-check"></i> Démarrer un projet</a>
+          </div>
+          <div class="service-visual fade-up">
+            <i class="fas fa-file-signature"></i>
+            <h3>Un dossier qui convainc</h3>
+            <p>Nos experts rédigent des dossiers aux standards internationaux, adaptés aux exigences des bailleurs, banques et investisseurs institutionnels.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILISATION -->
+      <div class="service-detail" id="mobilisation">
+        <div class="service-detail-grid reverse">
+          <div class="service-visual fade-up">
+            <i class="fas fa-chart-line"></i>
+            <h3>Des financements sur mesure</h3>
+            <p>Accédez à notre réseau d'investisseurs institutionnels, fonds d'investissement et banques partenaires à travers l'Afrique et l'Europe.</p>
+          </div>
+          <div class="fade-up">
+            <div class="service-icon-lg"><i class="fas fa-hand-holding-usd"></i></div>
+            <span class="section-label">Service 02</span>
+            <h2>Mobilisation de ressources</h2>
+            <p style="margin:1rem 0">Nous identifions et structurons les meilleures sources de financement pour vos projets, en s'appuyant sur notre réseau en Afrique et à l'international.</p>
+            <ul class="service-list">
+              <li><i class="fas fa-check-circle"></i> Recherche et identification de financements</li>
+              <li><i class="fas fa-check-circle"></i> Structuration de tours de table investisseurs</li>
+              <li><i class="fas fa-check-circle"></i> Levée de fonds (private equity, dette)</li>
+              <li><i class="fas fa-check-circle"></i> Instruments financiers : BG, SBLC, MT760</li>
+              <li><i class="fas fa-check-circle"></i> Financement de projets (project finance)</li>
+              <li><i class="fas fa-check-circle"></i> Accès aux fonds de développement régionaux</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" style="margin-top:2rem"><i class="fas fa-calendar-check"></i> Parler à un expert</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMATIONS -->
+      <div class="service-detail" id="formations">
+        <div class="service-detail-grid">
+          <div class="fade-up">
+            <div class="service-icon-lg"><i class="fas fa-chalkboard-teacher"></i></div>
+            <span class="section-label">Service 03</span>
+            <h2>Formations professionnelles</h2>
+            <p style="margin:1rem 0">Des programmes de formation sur-mesure pour renforcer les compétences de vos équipes en finance, gestion de projets et gestion des risques.</p>
+            <ul class="service-list">
+              <li><i class="fas fa-check-circle"></i> Finance structurée et ingénierie financière</li>
+              <li><i class="fas fa-check-circle"></i> Montage et rédaction de projets</li>
+              <li><i class="fas fa-check-circle"></i> Gestion et analyse des risques</li>
+              <li><i class="fas fa-check-circle"></i> Assurance et couverture de risques</li>
+              <li><i class="fas fa-check-circle"></i> Droit des affaires africain</li>
+              <li><i class="fas fa-check-circle"></i> Intra-entreprise ou inter-entreprises</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" style="margin-top:2rem"><i class="fas fa-calendar-check"></i> Demander un programme</a>
+          </div>
+          <div class="service-visual fade-up">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Montez en compétences</h3>
+            <p>Nos formateurs experts dispensent des programmes adaptés aux réalités du marché africain et aux standards internationaux.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- STRUCTURATION -->
+      <div class="service-detail" id="structuration">
+        <div class="service-detail-grid reverse">
+          <div class="service-visual fade-up">
+            <i class="fas fa-sitemap"></i>
+            <h3>Optimisation financière</h3>
+            <p>Business plans dynamiques, cash-flow prévisionnels, TRI et VAN pour décider en toute clarté.</p>
+          </div>
+          <div class="fade-up">
+            <div class="service-icon-lg"><i class="fas fa-university"></i></div>
+            <span class="section-label">Service 04</span>
+            <h2>Structuration financière & organisationnelle</h2>
+            <p style="margin:1rem 0">Nous optimisons la structure financière et organisationnelle de vos projets et entreprises pour maximiser la performance et attirer les investisseurs.</p>
+            <ul class="service-list">
+              <li><i class="fas fa-check-circle"></i> Modélisation financière avancée (TRI, VAN, stress tests)</li>
+              <li><i class="fas fa-check-circle"></i> Optimisation structure dette / fonds propres</li>
+              <li><i class="fas fa-check-circle"></i> Structuration mezzanine et quasi-equity</li>
+              <li><i class="fas fa-check-circle"></i> Restructuration et assainissement financier</li>
+              <li><i class="fas fa-check-circle"></i> Tableaux de bord financiers et KPI</li>
+              <li><i class="fas fa-check-circle"></i> Gouvernance et contrôle interne</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" style="margin-top:2rem"><i class="fas fa-calendar-check"></i> Analyser mon projet</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMMOBILIER -->
+      <div class="service-detail" id="immobilier">
+        <div class="service-detail-grid">
+          <div class="fade-up">
+            <div class="service-icon-lg"><i class="fas fa-building"></i></div>
+            <span class="section-label">Service 05</span>
+            <h2>Expertise immobilière</h2>
+            <p style="margin:1rem 0">Nos experts immobiliers certifiés évaluent, auditent et analysent vos actifs immobiliers pour vous donner une image fidèle de leur valeur.</p>
+            <ul class="service-list">
+              <li><i class="fas fa-check-circle"></i> Évaluation d'actifs immobiliers</li>
+              <li><i class="fas fa-check-circle"></i> Audit immobilier complet</li>
+              <li><i class="fas fa-check-circle"></i> Due diligence technique et juridique</li>
+              <li><i class="fas fa-check-circle"></i> Valorisation de portefeuilles immobiliers</li>
+              <li><i class="fas fa-check-circle"></i> Conseil en investissement immobilier</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" style="margin-top:2rem"><i class="fas fa-calendar-check"></i> Demander une expertise</a>
+          </div>
+          <div class="service-visual fade-up">
+            <i class="fas fa-city"></i>
+            <h3>Valorisation certifiée</h3>
+            <p>Des expertises reconnues par les banques, compagnies d'assurance et juridictions locales.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INDUSTRIEL -->
+      <div class="service-detail" id="industriel">
+        <div class="service-detail-grid reverse">
+          <div class="service-visual fade-up">
+            <i class="fas fa-industry"></i>
+            <h3>Audit technique industriel</h3>
+            <p>Des évaluations rigoureuses pour sécuriser vos investissements dans les actifs industriels.</p>
+          </div>
+          <div class="fade-up">
+            <div class="service-icon-lg"><i class="fas fa-cogs"></i></div>
+            <span class="section-label">Service 06</span>
+            <h2>Expertise industrielle</h2>
+            <p style="margin:1rem 0">Nous réalisons des audits techniques et évaluations d'unités industrielles pour vous donner une vision claire de la valeur et des risques de vos actifs.</p>
+            <ul class="service-list">
+              <li><i class="fas fa-check-circle"></i> Audit technique d'installations industrielles</li>
+              <li><i class="fas fa-check-circle"></i> Évaluation d'unités de production</li>
+              <li><i class="fas fa-check-circle"></i> Structuration d'investissements industriels</li>
+              <li><i class="fas fa-check-circle"></i> Analyse de viabilité technique</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" style="margin-top:2rem"><i class="fas fa-calendar-check"></i> Commander un audit</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ASSURANCE -->
+      <div class="service-detail" id="assurance">
+        <div class="service-detail-grid">
+          <div class="fade-up">
+            <div class="service-icon-lg"><i class="fas fa-shield-alt"></i></div>
+            <span class="section-label">Service 07</span>
+            <h2>Expertise en assurance</h2>
+            <p style="margin:1rem 0">Nous accompagnons entreprises et institutions dans l'analyse de leurs risques assurables et la mise en place de couvertures optimales.</p>
+            <ul class="service-list">
+              <li><i class="fas fa-check-circle"></i> Audit de risques assurables</li>
+              <li><i class="fas fa-check-circle"></i> Évaluation de sinistres</li>
+              <li><i class="fas fa-check-circle"></i> Conseil en couverture assurantielle</li>
+              <li><i class="fas fa-check-circle"></i> Gestion de portefeuilles de risques</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" style="margin-top:2rem"><i class="fas fa-calendar-check"></i> Évaluer mes risques</a>
+          </div>
+          <div class="service-visual fade-up">
+            <i class="fas fa-umbrella"></i>
+            <h3>Protégez vos actifs</h3>
+            <p>Des stratégies de couverture adaptées à chaque type de projet et de structure d'entreprise.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- JURIDIQUE -->
+      <div class="service-detail" id="juridique">
+        <div class="service-detail-grid reverse">
+          <div class="service-visual fade-up">
+            <i class="fas fa-balance-scale"></i>
+            <h3>Sécurité juridique totale</h3>
+            <p>De la structuration initiale à la signature finale : chaque aspect juridique et contractuel est sécurisé.</p>
+          </div>
+          <div class="fade-up">
+            <div class="service-icon-lg"><i class="fas fa-gavel"></i></div>
+            <span class="section-label">Service 08</span>
+            <h2>Ingénierie juridique & financière</h2>
+            <p style="margin:1rem 0">Combinaison stratégique du droit, de la finance et de la structuration contractuelle pour sécuriser vos opérations.</p>
+            <ul class="service-list">
+              <li><i class="fas fa-check-circle"></i> Structuration juridique de projets (SPV, pactes)</li>
+              <li><i class="fas fa-check-circle"></i> Montage juridique d'opérations de financement</li>
+              <li><i class="fas fa-check-circle"></i> Due diligence juridique et financière</li>
+              <li><i class="fas fa-check-circle"></i> Partenariats : JV, PPP, MoU</li>
+              <li><i class="fas fa-check-circle"></i> Contrats EPC et industriels</li>
+              <li><i class="fas fa-check-circle"></i> Sécurisation contractuelle complète</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary" style="margin-top:2rem"><i class="fas fa-calendar-check"></i> Consulter un expert</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div style="max-width:700px;margin:0 auto">
+      <h2>Prêt à structurer votre projet ?</h2>
+      <p>Nos experts analysent gratuitement votre dossier lors d'un premier entretien confidentiel.</p>
+      <a href="index.html#contact" class="btn-white"><i class="fas fa-calendar-alt"></i> Prendre rendez-vous</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-area"><span class="brand-name">AMEXPERTS <span style="color:var(--purple-light)">&</span> PARTNERS</span></div>
+        <p>Cabinet de conseil et d'ingénierie de projets. Lomé, Togo.</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="#redaction">Rédaction de projets</a></li><li><a href="#mobilisation">Mobilisation de ressources</a></li><li><a href="#structuration">Structuration financière</a></li><li><a href="#immobilier">Expertise immobilière</a></li><li><a href="#juridique">Ingénierie juridique</a></li></ul></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">À propos</a></li><li><a href="realisation.html">Réalisations</a></li><li><a href="blog.html">Actualités</a></li><li><a href="partenaires.html">Partenariats</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+22899468126">+228 99 46 81 26</a></li><li><a href="tel:+41779885166">+41 77 988 51 66</a></li><li><a href="mailto:amexpertspartners20@gmail.com">amexpertspartners20@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AMEXPERTS AND PARTNERS — Tous droits réservés</p>
+      <div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="https://wa.me/22899468126"><i class="fab fa-whatsapp"></i></a><a href="mailto:amexpertspartners20@gmail.com"><i class="fas fa-envelope"></i></a></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/22899468126" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <script src="app.js"></script>
+</body>
+</html>
